@@ -1,0 +1,37 @@
+import 'tycoon_engine.dart';
+
+const citySpec = TycoonSpec(
+  res: [
+    Res('money', 'Bütçe', 'Budget', 0xFFFFD60A),
+    Res('power', 'Elektrik', 'Power', 0xFFFFB703, value: 0.5),
+    Res('water', 'Su', 'Water', 0xFF219EBC, value: 0.4),
+    Res('goods', 'Mal', 'Goods', 0xFFB08968, sell: 1.0, keep: 20, value: 1),
+  ],
+  blds: [
+    Bld('house', 'Konut bölgesi', 'Residential', 30, housing: 6, shape: 0, color: 0xFF7BD389),
+    Bld('power', 'Santral', 'Power plant', 50, make: {1: 1.6}, upkeep: 0.05, start: 1, shape: 1, color: 0xFFFFB703),
+    Bld('water', 'Su kulesi', 'Water tower', 45, make: {2: 1.6}, start: 1, shape: 6, color: 0xFF219EBC),
+    Bld('shop', 'Ticaret bölgesi', 'Commercial', 60, make: {0: 0.8}, use: {1: 0.1}, shape: 5, color: 0xFF8ECAE6),
+    Bld('industry', 'Sanayi bölgesi', 'Industrial', 70, make: {3: 0.9}, use: {1: 0.2, 2: 0.1}, shape: 1, color: 0xFFB08968),
+    Bld('park', 'Park', 'Park', 150, boost: 0.06, shape: 2, color: 0xFF52B788),
+    Bld('solar', 'Güneş çiftliği', 'Solar farm', 260, make: {1: 6}, unlockRes: 3, unlockAt: 60, shape: 2, color: 0xFFFFD166),
+    Bld('pump', 'Arıtma tesisi', 'Water plant', 240, make: {2: 6}, unlockRes: 3, unlockAt: 60, shape: 6, color: 0xFF0077B6),
+    Bld('apartment', 'Apartman', 'Apartments', 420, housing: 28, unlockRes: 3, unlockAt: 150, shape: 3, color: 0xFFADB5BD),
+    Bld('mall', 'AVM', 'Mall', 800, make: {0: 9}, use: {1: 0.6}, unlockRes: 3, unlockAt: 250, shape: 5, color: 0xFFE76F51),
+    Bld('stadium', 'Stadyum', 'Stadium', 1500, boost: 0.3, unlockRes: 3, unlockAt: 400, shape: 4, color: 0xFFEF476F),
+    Bld('skyscraper', 'Gökdelen', 'Skyscraper', 2500, housing: 90, unlockRes: 3, unlockAt: 650, shape: 3, color: 0xFF5E60CE),
+  ],
+  startMoney: 70,
+  population: true,
+  basePop: 3,
+  baseHousing: 4,
+  needs: {1: 0.03, 2: 0.03},
+  tax: 0.14,
+  growRate: 0.45,
+  clickMoney: 1,
+  goal: TGoal.population,
+  goalTr: 'Nüfus',
+  goalEn: 'Citizens',
+  unitTr: 'vatandaş',
+  unitEn: 'citizens',
+);
